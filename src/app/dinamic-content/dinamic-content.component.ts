@@ -1,5 +1,5 @@
 import { TextComponent } from './../form-components/text/text.component';
-import { Component, OnInit, ViewChild, ViewContainerRef, Input, ComponentRef, ComponentFactoryResolver, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, Input, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ButtonComponent } from '../form-components/button/button.component';
 
 @Component({
@@ -7,7 +7,7 @@ import { ButtonComponent } from '../form-components/button/button.component';
   templateUrl: './dinamic-content.component.html',
   styleUrls: ['./dinamic-content.component.css']
 })
-export class DinamicContentComponent implements OnDestroy {
+export class DinamicContentComponent {
 
   @ViewChild('container', { read: ViewContainerRef })
   container: ViewContainerRef;
