@@ -1,3 +1,5 @@
+import { ButtonComponent } from './../form-components/button/button.component';
+import { DinamicContentComponent } from './../dinamic-content/dinamic-content.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -8,10 +10,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     NgbModule.forRoot()
   ],
-  declarations: [],
+  declarations: [
+    DinamicContentComponent,
+    ButtonComponent
+  ],
   exports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    DinamicContentComponent,
+    ButtonComponent
+
   ]
 })
 export class SharedModule { }
