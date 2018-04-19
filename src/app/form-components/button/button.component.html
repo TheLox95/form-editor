@@ -1,1 +1,60 @@
-<p>button works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn {{classes}} {{classes.includes('disabled') === true ? 'disabled' : 'endabled' }}">Primary</button>
+    </div>
+    <div class="col">
+      <div class="d-flex flex-column">
+        <div class="p-2">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Button Type</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item" (click)="setType('btn-primary')">Primary</button>
+              <button class="dropdown-item" (click)="setType('btn-secondary')">Secondary</button>
+              <button class="dropdown-item" (click)="setType('btn-success')">Success</button>
+              <button class="dropdown-item" (click)="setType('btn-danger')">Danger</button>
+              <button class="dropdown-item" (click)="setType('btn-warning')">Warning</button>
+              <button class="dropdown-item" (click)="setType('btn-info')">Info</button>
+              <button class="dropdown-item" (click)="setType('btn-light')">Light</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-2">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Button Outline</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item" (click)="setType('btn-outline-primary')">Primary</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-secondary')">Secondary</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-success')">Success</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-danger')">Danger</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-warning')">Warning</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-info')">Info</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-light')">Light</button>
+              <button class="dropdown-item" (click)="setType('btn-outline-dark')">Dark</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-2">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Button Size</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item" (click)="setSize('')">Normal</button>
+                    <button class="dropdown-item" (click)="setSize('btn-lg')">Big</button>
+                    <button class="dropdown-item" (click)="setSize('btn-sm')">Small</button>
+                  </div>
+              </div>
+        </div>
+        <div class="p-2">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option1" autocomplete="off" (click)="setEnabled(false)"> Disabled
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option2" autocomplete="off" (click)="setEnabled(true)"> Enabled
+                </label>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
