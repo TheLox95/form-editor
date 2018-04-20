@@ -10,7 +10,7 @@ import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'app';
-  template = 'button-template';
+  template = 'form-template';
 
   constructor(config: NgbDropdown) {
     // customize default values of dropdowns used by this component tree

@@ -1,0 +1,9 @@
+#editor{
+  border: 1px solid black;
+  text-align: center;
+}
+
+.modal-body{
+  overflow: auto;
+}
+

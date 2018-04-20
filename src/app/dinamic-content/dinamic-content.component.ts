@@ -1,3 +1,4 @@
+import { FormComponent } from './../form-components/form/form.component';
 import { TextComponent } from './../form-components/text/text.component';
 import { Component, ViewChild, ViewContainerRef, Input, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { ButtonComponent } from '../form-components/button/button.component';
@@ -32,6 +33,7 @@ export class DinamicContentComponent {
   private mappings = {
     'button-template': ButtonComponent,
     'text-template': TextComponent,
+    'form-template': FormComponent,
  };
 
  private componentRef: ComponentRef<{}>;

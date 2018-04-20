@@ -1,3 +1,4 @@
+import { FormComponent } from './form-components/form/form.component';
 import { ButtonComponent } from './form-components/button/button.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { TextComponent } from './form-components/text/text.component';
   declarations: [
     AppComponent,
     TextComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,8 @@ import { TextComponent } from './form-components/text/text.component';
   ],
   entryComponents: [
     ButtonComponent,
-    TextComponent
+    TextComponent,
+    FormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

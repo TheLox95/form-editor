@@ -3,12 +3,20 @@ import { DinamicContentComponent } from './../dinamic-content/dinamic-content.co
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DragulaModule } from 'ng2-dragula';
+import { ClipboardModule } from 'ngx-clipboard';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    DragulaModule,
+    ClipboardModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule
   ],
   declarations: [
     DinamicContentComponent,
@@ -18,8 +26,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     NgbModule,
     DinamicContentComponent,
-    ButtonComponent
-
+    ButtonComponent,
+    DragulaModule,
+    ClipboardModule,
+    SimpleNotificationsModule,
+    BrowserAnimationsModule
   ]
 })
 export class SharedModule { }
