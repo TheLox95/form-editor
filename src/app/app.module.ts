@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { TextComponent } from './form-components/text/text.component';
 import { ImageComponent } from './form-components/image/image.component';
+import { HtmlComponentsService } from './html-components.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { ImageComponent } from './form-components/image/image.component';
     FormComponent,
     ImageComponent
   ],
-  providers: [],
+  providers: [HtmlComponentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { HtmlComponentsService } from './../../html-components.service';
 import { ImageComponent } from './../image/image.component';
 import { ButtonComponent } from './../button/button.component';
 import {
@@ -22,11 +23,6 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class FormComponent implements OnInit {
   @ViewChild('editor') el: ElementRef;
-  @ViewChild('p') public popover: NgbPopover;
-  @ViewChild('componentEditor', { read: ViewContainerRef })
-  componentEditorContainer: ViewContainerRef;
-  @ViewChild('componentEditorTemplate', { read: ViewContainerRef })
-  componentEditorTemplateContainer: ViewContainerRef;
   htmlToExport = '';
 
   constructor(
@@ -34,7 +30,7 @@ export class FormComponent implements OnInit {
     private modalService: NgbModal,
     private _service: NotificationsService,
     private componentFactoryResolver: ComponentFactoryResolver,
-    private location: ViewContainerRef
+    private htmlComponentsService: HtmlComponentsService
   ) {
     dragula.setOptions('bag-task1', {
       removeOnSpill: true,
@@ -54,10 +50,8 @@ export class FormComponent implements OnInit {
   ngOnInit() {}
 
   public openEditorModal(element): void {
-    const modal = this.modalService.open(ButtonComponent);
-    (<ButtonComponent>modal.componentInstance).change.subscribe(htmlClass => {
-      (<HTMLButtonElement>element).className = htmlClass;
-    });
+    const modal = this.modalService.open(this.htmlComponentsService.get(element.dataset.component));
+    modal.componentInstance.setHtmlComponent(element);
   }
 
   copySuccess() {

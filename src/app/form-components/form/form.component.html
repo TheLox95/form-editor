@@ -13,7 +13,7 @@
       <div class="d-flex flex-column">
 
         <div class="p-2" [dragula]='"bag-task1"'>
-          <button type="button" class="btn btn-primary">Button</button>
+          <button type="button" data-component='button' class="btn btn-primary">Button</button>
         </div>
 
         <div class="p-2" [dragula]='"bag-task1"'>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="p-2" [dragula]='"bag-task1"'>
-          <p>
+          <p data-component='text'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis nibh eu purus cursus, vitae malesuada nisi pretium.
             Phasellus nec efficitur quam. Sed ultrices interdum velit, at congue enim viverra at. In in massa non augue scelerisque
             fermentum eget sed nisl. Ut auctor elit ac mauris condimentum porttitor. Etiam quis nulla rhoncus dolor dictum
@@ -114,7 +114,7 @@
         </div>
 
         <div [dragula]='"bag-task1"'>
-          <img src="http://placekitten.com/100/100" class="img" alt="Responsive image">
+          <img src="http://placekitten.com/100/100" data-component='image' class="img" alt="Responsive image">
         </div>
 
         <div [dragula]='"bag-task1"'>
@@ -174,9 +174,3 @@
 </ng-template>
 
 <simple-notifications></simple-notifications>
-
-<ng-template #popContent>Hello, <b>leo</b>!</ng-template>
-
-<ng-template #componentEditorTemplate>
-  <div #componentEditor></div>
-</ng-template>
