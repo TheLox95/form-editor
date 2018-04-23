@@ -24,12 +24,12 @@ export class TextComponent implements OnInit, HtmlComponent {
   }
 
 
-  public get text () : string {
+  public get text (): string {
     return this._text;
   }
 
 
-  public set text(v : string) {
+  public set text(v: string) {
     this._text = v;
     this._textComponent.textContent = v;
   }
