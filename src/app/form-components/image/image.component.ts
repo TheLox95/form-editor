@@ -6,17 +6,12 @@ import { HtmlComponent } from '../html-component';
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.css']
 })
-export class ImageComponent implements OnInit, HtmlComponent {
+export class ImageComponent implements HtmlComponent {
   public imageProp: string;
   private _image: HTMLImageElement;
   private _url = 'http://placekitten.com/100/100';
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  setHtmlComponent(component: HTMLElement): void {
+  public setHtmlComponent(component: HTMLElement): void {
     this._image = component as HTMLImageElement;
   }
 

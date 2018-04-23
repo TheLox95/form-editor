@@ -3,11 +3,10 @@ import { TextComponent } from './form-components/text/text.component';
 import { ButtonComponent } from './form-components/button/button.component';
 import { Injectable} from '@angular/core';
 import { ImageComponent } from './form-components/image/image.component';
-import { HtmlComponent } from './form-components/html-component';
 
 @Injectable()
 export class HtmlComponentsService {
-  private _componentsMap = new Map<string, HtmlComponent>();
+  private _componentsMap = new Map<string, any>();
 
   constructor() {
     this._componentsMap.set('button', ButtonComponent);
