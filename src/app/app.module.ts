@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { TextComponent } from './form-components/text/text.component';
 import { ImageComponent } from './form-components/image/image.component';
 import { HtmlComponentsService } from './html-components.service';
+import { HeadingComponent } from './form-components/heading/heading.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { HtmlComponentsService } from './html-components.service';
     AppComponent,
     TextComponent,
     FormComponent,
-    ImageComponent
+    ImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import { HtmlComponentsService } from './html-components.service';
     ButtonComponent,
     TextComponent,
     FormComponent,
-    ImageComponent
+    ImageComponent,
+    HeadingComponent
   ],
   providers: [HtmlComponentsService],
   bootstrap: [AppComponent]

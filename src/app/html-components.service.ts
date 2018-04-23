@@ -1,3 +1,4 @@
+import { HeadingComponent } from './form-components/heading/heading.component';
 import { TextComponent } from './form-components/text/text.component';
 import { ButtonComponent } from './form-components/button/button.component';
 import { Injectable} from '@angular/core';
@@ -12,6 +13,7 @@ export class HtmlComponentsService {
     this._componentsMap.set('button', ButtonComponent);
     this._componentsMap.set('image', ImageComponent);
     this._componentsMap.set('text', TextComponent);
+    this._componentsMap.set('heading', HeadingComponent);
   }
 
   get(component: string) {

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p class="{{size}}">{{value}}</p>
+    </div>
+    <div class="col">
+      <div class="d-flex flex-column">
+        <div class="p-2">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Size</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item" (click)="size = 'h1'">H1</button>
+              <button class="dropdown-item" (click)="size = 'h2'">H2</button>
+              <button class="dropdown-item" (click)="size = 'h3'">H3</button>
+              <button class="dropdown-item" (click)="size = 'h4'">H4</button>
+              <button class="dropdown-item" (click)="size = 'h5'">H5</button>
+              <button class="dropdown-item" (click)="size = 'h6'">H6</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2">
+          <div class="form-group">
+            <label for="textInput">Text</label>
+            <input type="text" class="form-control" id="textInput" [(ngModel)]="value">
+          </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>

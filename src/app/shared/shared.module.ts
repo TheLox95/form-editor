@@ -1,3 +1,4 @@
+import { HeadingComponent } from './../form-components/heading/heading.component';
 import { ButtonComponent } from './../form-components/button/button.component';
 import { DinamicContentComponent } from './../dinamic-content/dinamic-content.component';
 import { NgModule } from '@angular/core';
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     DinamicContentComponent,
-    ButtonComponent
+    ButtonComponent,
+    HeadingComponent
   ],
   exports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     ClipboardModule,
     SimpleNotificationsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HeadingComponent
   ]
 })
 export class SharedModule { }
