@@ -1,6 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, TemplateRef } from '@angular/core';
+import { ImageComponent } from './../image/image.component';
+import { ButtonComponent } from './../button/button.component';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  ViewEncapsulation,
+  TemplateRef,
+  ComponentFactoryResolver,
+  ViewContainerRef
+} from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
@@ -11,31 +22,50 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class FormComponent implements OnInit {
   @ViewChild('editor') el: ElementRef;
+  @ViewChild('p') public popover: NgbPopover;
+  @ViewChild('componentEditor', { read: ViewContainerRef })
+  componentEditorContainer: ViewContainerRef;
+  @ViewChild('componentEditorTemplate', { read: ViewContainerRef })
+  componentEditorTemplateContainer: ViewContainerRef;
   htmlToExport = '';
 
-  constructor(private dragula: DragulaService, private modalService: NgbModal, private _service: NotificationsService ) {
+  constructor(
+    private dragula: DragulaService,
+    private modalService: NgbModal,
+    private _service: NotificationsService,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private location: ViewContainerRef
+  ) {
     dragula.setOptions('bag-task1', {
       removeOnSpill: true,
-      copy: function (el, source) {
+      copySortSource: true,
+      copy: function(el, source) {
         return source.dataset.container !== 'editor';
       },
-      accepts: function (el, container, handle) {
+      accepts: function(el, container, handle) {
         return container.dataset.component === 'form-component';
       }
     });
+    dragula.drop.subscribe(value => {
+      value[1].addEventListener('click', () => this.openEditorModal(value[1]));
+    });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  public openEditorModal(element): void {
+    const modal = this.modalService.open(ButtonComponent);
+    (<ButtonComponent>modal.componentInstance).change.subscribe(htmlClass => {
+      (<HTMLButtonElement>element).className = htmlClass;
+    });
   }
 
   copySuccess() {
-    console.log('copied');
     this._service.success('Copy succeed', 'HTML Copied', {
       timeOut: 2000,
       showProgressBar: true
     });
   }
-
 
   export(content) {
     for (const element of this.el.nativeElement.children) {
@@ -72,9 +102,7 @@ export class FormComponent implements OnInit {
   </body>
 </html>`;
 
-      console.log(this.htmlToExport);
-      this.modalService.open(content);
-
+    console.log(this.htmlToExport);
+    this.modalService.open(content);
   }
-
 }

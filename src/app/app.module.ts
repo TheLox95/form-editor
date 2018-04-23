@@ -7,13 +7,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { TextComponent } from './form-components/text/text.component';
+import { ImageComponent } from './form-components/image/image.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TextComponent,
-    FormComponent
+    FormComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { TextComponent } from './form-components/text/text.component';
   entryComponents: [
     ButtonComponent,
     TextComponent,
-    FormComponent
+    FormComponent,
+    ImageComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

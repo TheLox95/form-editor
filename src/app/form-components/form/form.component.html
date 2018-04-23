@@ -114,15 +114,40 @@
         </div>
 
         <div [dragula]='"bag-task1"'>
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Left</button>
-            <button type="button" class="btn btn-secondary">Middle</button>
-            <button type="button" class="btn btn-secondary">Right</button>
-          </div>
+          <img src="http://placekitten.com/100/100" class="img" alt="Responsive image">
         </div>
 
         <div [dragula]='"bag-task1"'>
-          <img src="http://placekitten.com/100/100" class="img-fluid" alt="Responsive image">
+          <table class="table" (click)="openEditorModal($event)">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>
@@ -134,7 +159,7 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Modal title</h4>
-    <button type="button" class="btn btn-outline-dark" ngxClipboard (cbOnSuccess)="copySuccess( example )" cbContent="{{htmlToExport}}">Copy</button>
+    <button type="button" class="btn btn-outline-dark" ngxClipboard (cbOnSuccess)="copySuccess()" cbContent="{{htmlToExport}}">Copy</button>
 
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
@@ -149,3 +174,9 @@
 </ng-template>
 
 <simple-notifications></simple-notifications>
+
+<ng-template #popContent>Hello, <b>leo</b>!</ng-template>
+
+<ng-template #componentEditorTemplate>
+  <div #componentEditor></div>
+</ng-template>
