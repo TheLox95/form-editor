@@ -1,3 +1,17 @@
-<p>
-  {{imageProp}} works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img [src]="url" alt="">
+    </div>
+    <div class="col">
+      <div class="d-flex flex-column">
+        <div class="p-2">
+          <div class="form-group">
+            <label for="textInput">Url</label>
+            <input type="text" class="form-control" id="textInput" [(ngModel)]="url">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

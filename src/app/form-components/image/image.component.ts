@@ -8,6 +8,8 @@ import { HtmlComponent } from '../html-component';
 })
 export class ImageComponent implements OnInit, HtmlComponent {
   public imageProp: string;
+  private _image: HTMLImageElement;
+  private _url = 'http://placekitten.com/100/100';
 
   constructor() { }
 
@@ -15,6 +17,19 @@ export class ImageComponent implements OnInit, HtmlComponent {
   }
 
   setHtmlComponent(component: HTMLElement): void {
+    this._image = component as HTMLImageElement;
   }
+
+  public set url(v: string) {
+    this._url = v;
+    this._image.src = v;
+  }
+
+
+  public get url() : string {
+    return this._url;
+  }
+
+
 
 }
